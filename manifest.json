@@ -1,0 +1,25 @@
+{
+    "name": "DanmakuTver",
+    "description": "Tverの動画にニコニコ動画風の弾幕コメント機能を追加します",
+    "version": "1.0",
+    "manifest_version": 3,
+    "icons": {
+        "128": "icon.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+          "js": ["content.js"],
+          "matches": ["*://*.tver.jp/*"],
+          "css": ["DanmakuTver.css"]
+        }
+    ],
+    "permissions": ["storage"],
+    "host_permissions": ["*://*.tver.jp/*"],
+    "web_accessible_resources": [{
+        "resources": ["DanmakuTver.js","libs/danmaku.min.js","test.json","images/*"],
+        "matches": ["*://*.tver.jp/*"]
+    }]
+}
